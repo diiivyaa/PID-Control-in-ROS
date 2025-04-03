@@ -1,0 +1,11 @@
+Kp_f: 4
+Ki_f: 0
+Kd_f: 0.1
+Kp_a: 5
+Ki_a: 0
+Kd_a: 0.01
+target_distance: 1.5
+target_angle: 0
+dt: 0.1
+pillar_x: 11
+pillar_y: 13
