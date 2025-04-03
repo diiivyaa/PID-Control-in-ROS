@@ -2,65 +2,56 @@
 
 ## Objective
 
-This project involves simulating a Husky robot in an empty Gazebo world with a single pillar using Robot Operating System (ROS). The main goal is to implement a PID controller to guide the Husky robot towards the pillar and make it stop at a predetermined distance, while facing the pillar.
+This project involves simulating a Husky robot in an empty Gazebo world with a single pillar using Robot Operating System (ROS). The main goal is to implement a PID controller to guide the Husky robot towards the pillar and make it stop while facing the pillar.
 
 ---
 
 ## Task Description
+The Husky robot is expected to:
+    1. Navigate towards the pillar using PID control.
+    2. Stop at a predetermined distance from the pillar.
+    3. Align itself such that it faces the pillar upon stopping.
+---
 
-1. **Environment Setup**  
-   - An empty simulation world is used with a single cylindrical pillar.
-   - The pillar has:
-     - Height: `2.0` units
-     - Diameter: `0.2` units
+## Initial Conditions
 
-2. **Robot and Pillar Configuration**  
-   - A Husky robot will be used as the mobile platform.
-   - The location of the pillar and the mass of the Husky robot will be pre-defined for the simulation.
+### Initial location of Husky and pillar
 
-3. **Simulation Goal**  
-   - The Husky robot is expected to:
-     1. Navigate towards the pillar using PID control.
-     2. Stop at a predetermined distance from the pillar.
-     3. Align itself such that it faces the pillar upon stopping.
+| Husky Coordinates | Pillar Coordinates | Initial Distance (meters) | Initial Orientation (degree) |
+|-------------------|-------------------|---------------------------|-----------------------------|
+| (0, 0)            | (11, 13)          | 17.0294                   | 49.7636                     |
 
+![Initial Conditions](assets/inital.png)
 ---
 
 ## PID Control Task
-
-You are required to design and implement a **PID (Proportional, Integral, Derivative) controller** for this simulation to:
-
 - Control the velocity of the Husky robot towards the pillar.
 - Reduce and eventually eliminate the positional error.
 - Maintain stability without oscillations or overshooting.
 
 ---
 
-## Deliverables
+## Extra: Testing the Effect of Mass on PID Performance
 
-1. **PID Controller Implementation**  
-   Implement the PID algorithm to control the movement of the Husky robot.
+To evaluate the robustness of the PID controller, the mass of the Husky robot was altered **without modifying the PID gain values**. Two different masses were tested:
 
-2. **PID Tuning**  
-   Tune the PID parameters (`Kp`, `Ki`, `Kd`) properly to achieve:
-   - Smooth approach
-   - Minimal overshoot
-   - Precise stopping at the predetermined distance
-   - Stable final orientation facing the pillar
+- **400 kg**
+- **500 kg**
 
-3. **Report**  
-   Include the following in your report:
-   - Explanation of the PID algorithm and its components.
-   - Rationale for your chosen PID parameters and tuning process.
-   - Analysis of the controller's performance.
-   - Any challenges faced during implementation and how you addressed them.
+### Observations:
+- Only slight variations in the PID performance were observed.
+- The Husky maintained good control and successfully reached the predetermined distance in both cases.
+- Minor changes in settling time and slight overshooting were noted at higher mass, which is expected due to increased inertia.
 
 ---
 
-## Notes
+### Simulation Results
 
-- The simulation should demonstrate that the robot can consistently approach and stop at the desired distance from the pillar.
-- The Husky robot must always face the pillar when stopped.
+#### Case 1: Husky with 400 kg Mass
+![Husky with 400kg](assets/400.png)
+
+#### Case 2: Husky with 500 kg Mass
+![Husky with 500kg](assets/500.png)
 
 ---
 
@@ -70,8 +61,3 @@ You are required to design and implement a **PID (Proportional, Integral, Deriva
 - Gazebo Simulator
 - RViz (optional, for visualization)
 - Python / C++ (for PID implementation)
-
-
-
-
-
