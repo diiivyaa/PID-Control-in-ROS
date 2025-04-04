@@ -2,15 +2,17 @@
 
 ## Objective
 
-This project involves simulating a Husky robot in an empty Gazebo world with a single pillar using Robot Operating System (ROS). The main goal is to implement a PID controller to guide the Husky robot towards the pillar and make it stop while facing the pillar.
+This project involves simulating a Husky robot in an empty Gazebo world with a single pillar using Robot Operating System (ROS). The main goal is to implement a PID controller to guide the Husky robot towards the pillar and make it stop while facing the pillar. 
 
 ---
 
 ## Task Description
+
 The Husky robot is expected to:
     1. Navigate towards the pillar using PID control.
     2. Stop at a predetermined distance from the pillar.
     3. Align itself such that it faces the pillar upon stopping.
+
 ---
 
 ## Initial Conditions
