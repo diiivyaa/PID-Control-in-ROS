@@ -54,10 +54,3 @@ To evaluate the robustness of the PID controller, the mass of the Husky robot wa
 ![Husky with 500kg](assets/500.png)
 
 ---
-
-## Recommended Tools
-
-- ROS (Robot Operating System)
-- Gazebo Simulator
-- RViz (optional, for visualization)
-- Python / C++ (for PID implementation)
