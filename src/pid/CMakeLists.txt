@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(a265l_pid)
+project(pid)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
